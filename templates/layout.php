@@ -48,7 +48,7 @@
                             <input class="checkbox__input visually-hidden task__checkbox" type="checkbox"
                                     <?php if ($task["is_done"]): ?> checked <?php endif ?>
                                    value="1">
-                            <span class="checkbox__text"><?= $task['name'] ?></span>
+                            <span class="checkbox__text"><?= $task['task'] ?></span>
                         </label>
                     </td>
 
@@ -58,8 +58,8 @@
 
                     <td class="task__date">
                         <?php
-                        if (isset($task['finished_date'])): ?>
-                            <?= $task['finished_date'] ?>
+                        if (isset($task['finished_at'])): ?>
+                            <?= $task['finished_at'] ?>
                         <?php else: ?>
                             <i>Дата отсутствует</i>
                         <?php endif; ?>

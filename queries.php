@@ -2,13 +2,14 @@
 
 function getAllProjectsSqlQuery(): string
 {
-    return "SELECT p.name FROM users_projects up
+    return "SELECT p.name FROM `users_projects` up
             JOIN projects p ON up.project_id = p.id
-            WHERE user_id = 1";
+            WHERE up.user_id = 1";
 }
 
 function getAllTasksSqlQuery(): string
 {
-    return "SELECT FROM tasks
-            WHERE tasks.user_id = 1";
+    return "SELECT t.name AS task, p.name AS project, is_done, finished_at  FROM tasks t
+            JOIN projects p ON p.id = t.project_id
+            WHERE t.user_id = 1";
 }

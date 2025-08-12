@@ -25,7 +25,7 @@ if (!$tasksQuery) {
 
 $projects = mysqli_fetch_all($projectsQuery, MYSQLI_ASSOC);
 $tasks = mysqli_fetch_all($tasksQuery, MYSQLI_ASSOC);
-var_dump($projects);
+
 
 $content_page = include_template("main.php", [
     "projects" => $projects,
